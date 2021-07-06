@@ -97,6 +97,7 @@
         'report/account_day_book_view.xml',
         'report/account_asset_report_views.xml',
         'report/report.xml',
+        'report/report_invoice.xml',
     ],
     'qweb': [
         'static/src/xml/template.xml'

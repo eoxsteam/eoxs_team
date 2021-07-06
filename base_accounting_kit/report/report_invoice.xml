@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<template id="report_invoice_document_inherit" inherit_id="account.report_invoice_document" priority="21">
+
+			<!-- Get Company Bank Details -->
+		    <xpath expr="//p[@name='payment_term']" position="after">
+		    	<p><b>Company : </b><span t-field="o.company_id.partner_id.name"/></p>
+		    	<p><b>Account Number : </b><span t-field="o.company_id.partner_id.bank_ids.acc_number"/></p>
+		    	<p><b>Bank Name : </b><span t-field="o.company_id.partner_id.bank_ids.bank_id.name"/></p>
+		    	<p><b>Bank Identifier Code : </b><span t-field="o.company_id.partner_id.bank_ids.bank_id.bic"/></p>
+		    </xpath>
+
+		</template>
+
+	</data>
+</odoo>
