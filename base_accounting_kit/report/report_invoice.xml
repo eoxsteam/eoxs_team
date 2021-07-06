@@ -6,10 +6,22 @@
 
 			<!-- Get Company Bank Details -->
 		    <xpath expr="//p[@name='payment_term']" position="after">
-		    	<p><b>Company : </b><span t-field="o.company_id.partner_id.name"/></p>
-		    	<p><b>Account Number : </b><span t-field="o.company_id.partner_id.bank_ids.acc_number"/></p>
-		    	<p><b>Bank Name : </b><span t-field="o.company_id.partner_id.bank_ids.bank_id.name"/></p>
-		    	<p><b>Bank Identifier Code : </b><span t-field="o.company_id.partner_id.bank_ids.bank_id.bic"/></p>
+		    	<p t-if="o.company_id.partner_id.name" name="company">
+		    		<b>Company : </b>
+		    		<span t-field="o.company_id.partner_id.name"/>
+		    	</p>
+		    	<p t-if="o.company_id.partner_id.bank_ids.acc_number" name="account">
+		    		<b>Account Number : </b>
+		    		<span t-field="o.company_id.partner_id.bank_ids.acc_number"/>
+		    	</p>
+		    	<p t-if="o.company_id.partner_id.bank_ids.bank_id.name">
+		    		<b>Bank Name : </b>
+		    		<span t-field="o.company_id.partner_id.bank_ids.bank_id.name"/>
+		    	</p>
+		    	<p t-if="o.company_id.partner_id.bank_ids.bank_id.bic">
+		    		<b>Bank Identifier Code : </b>
+		    		<span t-field="o.company_id.partner_id.bank_ids.bank_id.bic"/>
+		    	</p>
 		    </xpath>
 
 		</template>
